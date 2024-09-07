@@ -16,3 +16,8 @@
   font-weight: 600;
   color: #fff;
 }
+
+input {
+  max-width: 3rem;
+
+}
