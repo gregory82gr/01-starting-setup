@@ -12,7 +12,9 @@ export class CounterEffects{
     ofType(init),
     switchMap(()=>{
       const storedCounter=localStorage.getItem('count');
+      console.log('storedCounter: ' + storedCounter)
       if(storedCounter){
+        console.log('storedCounter1: ' + storedCounter)
         return of(set({value: +storedCounter}));
       }
       return of(set({value:0}));
@@ -30,7 +32,7 @@ export class CounterEffects{
   ),
  {dispatch:false});
 
-  constructor(private actions$: Actions,private store:Store<{counter:number}>){
+  constructor(private actions$: Actions,private store:Store<{counter:number,step:number}>){
 
   }
 }
